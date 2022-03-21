@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/009c432c0f.js" crossorigin="anonymous"></script>
     <link rel="shortcut icon" href="./assets/dalogoblack.png" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <script src="index.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script type="text/javascript">
@@ -16,12 +17,13 @@
     })();
     </script>
 </head>
-<body>
-    <section id="landing-page" onmousemove = "moveBackground(event)">
+<body ontouchmove="touchMove(event)"  onmousewheel = "moveBackgroundScroll(event)" >
+    <section id="landing-page" onmousemove = "moveBackground(event)" >
         <nav>
             <figure>
                 <img id = "personal-logo" src="./assets/dalogo.png" alt="">
             </figure>
+           
             <ul class = "nav__link--list">
                 <li class = "nav__link" onclick="toggleModal()">
                     <a class = 
@@ -56,19 +58,53 @@
 
 
             </ul>
+            <button class = 'btn__menu click' onclick="openMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="menu__backdrop">
+                <button class ="btn__menu btn__menu--close click" onclick="closeMenu()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <ul class = 'menu__links'>
+                    <li class="menu__list">
+                        <a href="#" class = 'menu__link click' onclick="toggleModalMenu()">About</a>
+                    </li>
+                    <li class="menu__list">
+                        <a href="#projects" class = 'menu__link click' onclick="closeMenu()">Projects</a>
+                    </li>
+                    <li class="menu__list">
+                        <a href="#" class = 'menu__link click'  onclick="toggleModalMenu()">Contact</a>
+                    </li>
+                    <li class = "menu__list">
+                        <a href="#" class = 'menu__link click'  onclick="toggleContrastMenu()"><i class="fa-solid fa-circle-half-stroke click"></i></a>
+                    </li>
+                    
+                </ul>
+            </div>
+            
+            
+            
         </nav>
+        
         <header class="header">
+            <div class="title__typewriter" >
+                <h1 class="title dynamic__title">I'm <b class = "red"> Van Celdran.</b></h1>
+            </div>
             <div class= "header__content">
-                <h1 class="title">Hey</h1>
-                <h1 class="title red">I'm Van.</h1>
+                
+        
                 <p class="header__para">
-                    I'm a <b class = "red">Frontend Software Engineer</b> who gladly seeks to build and 
-                    improve skills to the top. I enjoy making visually appealing 
-                    websites with  excellent <b class = "red" >user experiences</b>.
+                    I'm a <b class = "red">Front End Developer </b> from Nevada, United States.
                     <br>
-                    Here is a bit more <b class = "red click" onclick="toggleModal()">about me</b>.
+                    
 
                 </p>
+                <div class="header__para-2nd">
+                    <p>
+                        Here is a bit more <b class = "header__about red click"  onclick="toggleModal()">about me.</b>
+                    </p>
+                </div>
+                
                 <div class="social__list">
                     <a href="https://github.com/VanGits" target = "_blank" class="social__link click">
                         <i class="fa-brands fa-github-square"></i>
@@ -82,18 +118,22 @@
                 </div>
             </div>
             <div class = "header__img--wrapper">
-                <img class = "header__img" src="./assets/undraw_web_developer_re_h7ie.svg" alt="">
+                <img class = "header__img" src="./assets/undraw_programming_re_kg9vv.svg" alt="">
             </div>
+            
+            
 
 
         </header>
+
+        
         <a href="#">
         <button class="mail__btn click " onclick = "toggleModal()">
             <i class="fa-solid fa-envelope"></i>
 
         </button>
         </a>
-
+        
         <a href="#projects" class="scroll">
             <div class="scroll__icon click "></div>
         </a>
@@ -161,35 +201,65 @@
             </div>
             
         </div>
-        <img src="./assets/semi circle.svg" class = "shape shape--0">
-        <img src="./assets/circle.svg" class = "shape shape--1">
+        <img src="./assets/circle.svg" class = "shape shape--0">
+        <img src="./assets/semi circle.svg" class = "shape shape--1">
         <img src="./assets/squiggly.svg" class = "shape shape--2">
-        <img src="./assets/circle.svg" class = "shape shape--3">
-        <img src="./assets/triangle.svg" class = "shape shape--4">
-        <img src="./assets/circle.svg" class = "shape shape--5">
-        <img src="./assets/squiggly.svg" class = "shape shape--6">
+        <img src="./assets/semi circle.svg" class = "shape shape--3">
+        <img src="./assets/squiggly.svg" class = "shape shape--4">
+        <img src="./assets/triangle.svg" class = "shape shape--5">
+        <img src="./assets/triangle.svg" class = "shape shape--6">
         <img src="./assets/circle.svg" class = "shape shape--7">
         <img src="./assets/semi circle.svg" class = "shape shape--8">
     </section>
-
     <section id = "projects">
+        
         <div class="container">
-            <div class="row">
+            
+            <div  data-aos="fade-in" data-aos-delay = "50" class="row">
                 <h1 class="section__title">
                     Here are some of my <span class = "red">projects</span>
 
                 </h1>
                 <ul class="project__list">
-                    <li class="project">
+                    <li data-aos="fade-right"class="project">
                         <div class="project__wrapper">
-                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
+                            <img src="./assets/e-commerce.PNG" class="project__img" alt="">
                             <div class="project__wrapper--bg"></div>
                             <div class="project__description">
                                 <h3 class="project__description--title">
-                                    Car Sales Projects
+                                    E-Commerce Website
                                 </h3>
                                 <h4 class="project__description--sub-title">
-                                    HTML, CSS, JavaScript, React
+                                    HTML | CSS | JavaScript | React
+                                </h4>
+                                <p class="project__description--para">
+                                    Created a Web App that acts as an e-commerce website using different routes using React route, has book filter options, etc.
+                                </p>
+                                <div class="project__description--links">
+                                    <a href="https://github.com/VanGits/react-library" class="project__description--link">
+                                        <i class="fa-brands fa-github-square"></i>
+                                    </a>
+                                    <a href="https://reactlibraryapp.herokuapp.com/" class="project__description--link">
+                                        <i class="fas fa-link"></i>
+                                    </a>
+                                </div>
+                                
+                            </div>
+                        </div>
+
+
+                    </li>
+
+                    <li data-aos="fade-left" class="project">
+                        <div class="project__wrapper">
+                            <img src="./assets/traveljournal.PNG" class="project__img" alt="">
+                            <div class="project__wrapper--bg"></div>
+                            <div class="project__description">
+                                <h3 class="project__description--title">
+                                    Travel Journal Website
+                                </h3>
+                                <h4 class="project__description--sub-title">
+                                    HTML | CSS | JavaScript | React
                                 </h4>
                                 <p class="project__description--para">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tenetur vitae asperiores soluta eveniet eos accusamus. Aut corporis voluptatibus excepturi aspernatur neque minus nihil vel expedita? Pariatur doloribus ipsum magni.
@@ -209,7 +279,7 @@
 
                     </li>
 
-                    <li class="project">
+                    <li data-aos="fade-right" class="project">
                         <div class="project__wrapper">
                             <img src="./assets/blinker mockup.png" class="project__img" alt="">
                             <div class="project__wrapper--bg"></div>
@@ -218,36 +288,7 @@
                                     Car Sales Projects
                                 </h3>
                                 <h4 class="project__description--sub-title">
-                                    HTML, CSS, JavaScript, React
-                                </h4>
-                                <p class="project__description--para">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tenetur vitae asperiores soluta eveniet eos accusamus. Aut corporis voluptatibus excepturi aspernatur neque minus nihil vel expedita? Pariatur doloribus ipsum magni.
-                                </p>
-                                <div class="project__description--links">
-                                    <a href="#" class="project__description--link">
-                                        <i class="fa-brands fa-github-square"></i>
-                                    </a>
-                                    <a href="#" class="project__description--link">
-                                        <i class="fas fa-link"></i>
-                                    </a>
-                                </div>
-                                
-                            </div>
-                        </div>
-
-
-                    </li>
-
-                    <li class="project">
-                        <div class="project__wrapper">
-                            <img src="./assets/blinker mockup.png" class="project__img" alt="">
-                            <div class="project__wrapper--bg"></div>
-                            <div class="project__description">
-                                <h3 class="project__description--title">
-                                    Car Sales Projects
-                                </h3>
-                                <h4 class="project__description--sub-title">
-                                    HTML, CSS, JavaScript, React
+                                    HTML | CSS | JavaScript | React
                                 </h4>
                                 <p class="project__description--para">
                                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime tenetur vitae asperiores soluta eveniet eos accusamus. Aut corporis voluptatibus excepturi aspernatur neque minus nihil vel expedita? Pariatur doloribus ipsum magni.
@@ -274,7 +315,7 @@
         </div>
     </section>
     <footer>
-        <div class="container">
+        <div data-aos="fade-up"class="container">
             <div class="row footer__row">
                 <a href="#" class="footer__anchor">
                 <figure class="footer__logo--img">
@@ -321,5 +362,12 @@
         </div>
 
     </footer>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        delay: 250,
+        once: true
+    });
+    </script>
 </body>
 </html>
